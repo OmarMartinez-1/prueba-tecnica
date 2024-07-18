@@ -1,0 +1,12 @@
+.heroBg{
+    background-image: url("./assets/HERO fondo.png");
+    background-size: cover;
+    background-position:top;
+  background-repeat: no-repeat; 
+}
+
+
+
+.carrucel::-webkit-scrollbar {
+  display: none; 
+}

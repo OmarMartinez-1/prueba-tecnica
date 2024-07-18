@@ -2,9 +2,20 @@ import carrucel from "../assets/Parade.png"
 import video from "../assets/Video.png"
 import clienteCero from "../assets/Cliente Cero.png"
 import vMatrix from "../assets/vMatrix.png"
+import { useEffect, useRef } from "react"
 
 function Main() {
 
+
+    const scrollRef = useRef(null)
+
+    const carrocelRef = useRef(null)
+
+    useEffect(()=>{
+
+        carrocelRef.current.scrollTo(1310,0)
+
+    })
    
 
     return (
@@ -32,7 +43,7 @@ function Main() {
                 </div>
 
 
-                <div className=" w-full  mt-8  overflow-x-scroll carrucel " >
+                <div className=" w-full  mt-8  overflow-x-scroll carrucel " ref={carrocelRef}>
 
                     <div  className="w-[4050px] h-full ">
                         <img  src={carrucel} alt="carrucel" className="object-fill" />
@@ -42,17 +53,17 @@ function Main() {
                 </div>
 
 
-                <button className="bg-sky-400 text-white rounded-md text-sm font-bold mt-1 p-1 px-4">DESCUBRE CÓMO</button>
+                <button onClick={()=>{scrollRef.current.scrollIntoView({ behavior: "smooth", block: "nearest",  })}} className="bg-sky-400 text-white rounded-md text-sm font-bold mt-1 p-1 px-4">DESCUBRE CÓMO</button>
 
 
             </div>
 
-            <div className="mx-12 m-8 md:w-[70%] md:text-center md:mx-auto">
+            <div className="mx-12 m-8 md:w-[70%] md:text-center md:mx-auto" >
                 <h1 className="text-3xl font-semibold text-center mb-3">¿Qué es vCloudPoint?</h1>
                 <p className="text-lg">Es una red de terminales que permite a múltiples usuarios el aprovechamiento efectivo y simultáneo de los recursos no explotados de una PC.</p>
             </div>
 
-            <div className="rounded-md shadow-md border-t-2 border-gray-50 md:mx-12 ">
+            <div className="rounded-md shadow-md border-t-2 border-gray-50 md:mx-12 " ref={scrollRef}>
                 <img src={video} className="h-full" />
             </div>
 
